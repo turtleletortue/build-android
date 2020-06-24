@@ -1,0 +1,26 @@
+For st18c7bnn(Nook Tablet 7" 2018):
+
+**These instructions are intended for Linux based OS's**
+
+
+Building TWRP:
+
+1: Download TWRP minimal source for android 8.1. These links are helpful https://github.com/minimal-manifest-twrp/READ_ME_FIRST https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+2: Make a device folder (if it doesn't already exist) and then make a bn folder in it.
+3: Put the android_twrp_bn_st18c7bnn in the device/bn folder, named as st18c7bnn.
+4: Open a terminal in the folder you put TWRP in and synced it in. Run "source build/envsetup.sh" and "export ALLOW_MISSING_DEPENDENCIES=true"
+5: Run "lunch st18c7bnn-eng" and "make recoveryimage" and hopefully it will build a functional recovery.img with TWRP.
+
+Building LineageOS:
+
+1: Download LineageOS 15.1 source code (instructions at https://github.com/LineageOS/android
+2: Create a "bn" folder in the device and vendor folders.
+3: Place android_device_bn_st18c7bnn in device/bn as st18c7bnn.
+4: Place android_vendor_bn_st18c7bnn in vendor/bn as st18c7bnn.
+5: Open a terminal in the directory LineageOS was downloaded to. 
+6: In the terminal, type in "source build/envsetup.sh" 
+7: In the terminal, type in "brunch lineage_st18c7bnn-userdebug". 
+NOTE: Brunch is currently broken with my device tree for st18c7bnn.
+If you encounter an error when trying to build near the end, just use "lunch lineage_st18c7bnn-userdebug" and "make bootimage recoveryimage vendorimage" instead. This will not make a TWRP zip, but will make images that you can flash.
+
+ 
